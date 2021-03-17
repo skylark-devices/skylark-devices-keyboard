@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./keyboard","./Key","./Monitor","./aliases","./codes","./isEventKey","./names"],function(e){return e});
-//# sourceMappingURL=sourcemaps/main.js.map
+define(["./keyboard","./codes"],function(e,n){var r={};for(var a in n)r[n[a]]=a;return e.names=r});
+//# sourceMappingURL=sourcemaps/names.js.map

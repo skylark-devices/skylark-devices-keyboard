@@ -4,7 +4,7 @@
   "description": "The keyboard  utility library.",
   "main": "-",
   "scripts": {
-    "build": "sbundle build .",
+    "build": "slib build .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "homepage": "www.skylarkjs.org",
@@ -25,7 +25,8 @@
   "bugs": "https://github.com/skylarkjs/skylark/issues",
   "dependencies": {
     "skylark-langx-ns": "git+https://github.com/skylark-langx/skylark-langx-ns.git#master",
-    "skylark-langx-klass": "git+https://github.com/skylark-langx/skylark-langx-klass.git#master"
+    "skylark-langx-klass": "git+https://github.com/skylark-langx/skylark-langx-klass.git#master",
+    "skylark-langx-types": "git+https://github.com/skylark-langx/skylark-langx-types.git#master"
   },
   "engines": {
     "node": ">=0.8.0"

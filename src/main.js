@@ -1,7 +1,11 @@
 define([
 	"./keyboard",
 	"./Key",
-	"./Monitor"
+	"./Monitor",
+	"./aliases",
+	"./codes",
+	"./isEventKey",
+	"./names"
 ],function(keyboard){
 	return keyboard;
 });
