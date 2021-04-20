@@ -1,10 +1,10 @@
 define([
-	"skylark-langx-types",
-	"./keyboard",
-	"./aliases",
-	"./codes",
-	"./names"
-],function(types,keyboard,alias,codes,names){
+  "skylark-langx-types",
+  "./keyboard",
+  "./aliases",
+  "./codes",
+  "./names"
+],function(types,keyboard,aliases,codes,names){
 
   /**
    * Compares a keyboard event with a given keyCode or keyName.
@@ -17,7 +17,7 @@ define([
    function isEventKey(event, nameOrCode) {
       var keyCode = event.which || event.keyCode || event.charCode;
       if (keyCode === null || keyCode === undefined) { 
-      	return false; 
+        return false; 
       }
 
       if (types.isString(nameOrCode)) {
