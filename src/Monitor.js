@@ -1,11 +1,11 @@
 define([
 	"skylark-langx-klass",
 	"./keyboard",
-	"./Key"
+	"./KeyState"
 ],function(
 	klass,
 	keyboard,
-	Key
+	KeyState
 ){
 	"use strict";
 
@@ -23,10 +23,10 @@ define([
 			/**
 			 * Array with keyboard keys status.
 			 *
-			 * @property keys
+			 * @property keyStates
 			 * @type {Array}
 			 */
-			this.keys = [];
+			this.keyStates = [];
 
 
 			/**
@@ -106,14 +106,14 @@ define([
 				var key = this.actions.shift();
 				var action = this.actions.shift();
 
-				if(this.keys[key] === undefined)
+				if(this.keyStates[key] === undefined)
 				{
-					this.keys[key] = new Key();
+					this.keyStates[key] = new Key();
 				}
 
-				this.keys[key].update(action);
+				this.keyStates[key].update(action);
 
-				if(this.keys[key].justReleased || this.keys[key].justPressed)
+				if(this.keyStates[key].justReleased || this.keyStates[key].justPressed)
 				{
 					this.actions.push(key);
 					this.actions.push(Key.RESET);
@@ -131,11 +131,11 @@ define([
 		 */
 		reset : function() {
 			//Reset all keys
-			for(var i = 0; i < this.keys.length; i++)
+			for(var i = 0; i < this.keyStates.length; i++)
 			{
-				if(this.keys[i] !== undefined)
+				if(this.keyStates[i] !== undefined)
 				{
-					this.keys[i].reset();
+					this.keyStates[i].reset();
 				}
 			}
 		},
@@ -147,7 +147,7 @@ define([
 		 * @return {boolean} True is the key is currently pressed
 		 */
 		keyPressed : function(key){
-			return this.keys[key] !== undefined && this.keys[key].pressed;
+			return this.keyStates[key] !== undefined && this.keyStates[key].pressed;
 		},
 
 		/**
@@ -157,7 +157,7 @@ define([
 		 * @return {boolean} True is the key was just pressed
 		 */
 		keyJustPressed : function(key){
-			return this.keys[key] !== undefined && this.keys[key].justPressed;
+			return this.keyStates[key] !== undefined && this.keyStates[key].justPressed;
 		},
 
 		/**
@@ -167,7 +167,7 @@ define([
 		 * @return {boolean} True is the key was just pressed
 		 */
 		keyJustReleased : function(key){
-			return this.keys[key] !== undefined && this.keys[key].justReleased;
+			return this.keyStates[key] !== undefined && this.keyStates[key].justReleased;
 		},
 
 

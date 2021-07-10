@@ -5,12 +5,12 @@ define([
 	"use strict";
 
 	/**
-	 * Key is used by Keyboard, Mouse, etc, to represent a key state.
+	 * KeyState is used by Keyboard, Mouse, etc, to represent a key state.
 	 *
-	 * @class Key
+	 * @class KeyState
 	 * @module Input
 	*/
-	var Key = klass({
+	var KeyState = klass({
 		_construct : function() {
 			/**
 			 * Indicates if this key is currently pressed.
@@ -47,7 +47,7 @@ define([
 			this.justPressed = false;
 			this.justReleased = false;
 
-			if(action === Key.DOWN)
+			if(action === KeyState.DOWN)
 			{
 				if(this.pressed === false)
 				{
@@ -55,7 +55,7 @@ define([
 				}
 				this.pressed = true;
 			}
-			else if(action === Key.UP)
+			else if(action === KeyState.UP)
 			{
 				if(this.pressed)
 				{
@@ -63,7 +63,7 @@ define([
 				}
 				this.pressed = false;
 			}
-			else if(action === Key.RESET)
+			else if(action === KeyState.RESET)
 			{
 				this.justReleased = false;
 				this.justPressed = false;
@@ -98,23 +98,23 @@ define([
 	 * @attribute DOWN
 	 * @type {Number}
 	 */
-	Key.DOWN = -1;
+	KeyState.DOWN = -1;
 
 	/**
 	 * Up
 	 * @attribute UP
 	 * @type {Number}
 	 */
-	Key.UP = 1;
+	KeyState.UP = 1;
 
 	/**
 	 * Reset
 	 * @attribute RESET
 	 * @type {Number}
 	 */
-	Key.RESET = 0;
+	KeyState.RESET = 0;
 
 
-	return keyboard.Key = Key;
+	return keyboard.KeyState = KeyState;
 
 });

@@ -1,6 +1,7 @@
 define([
 	"./keyboard",
-	"./Key",
+	"./KeyState",
+	"./keys",
 	"./Monitor",
 	"./aliases",
 	"./codes",
