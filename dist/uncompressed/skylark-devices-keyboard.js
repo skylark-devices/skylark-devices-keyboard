@@ -1003,8 +1003,6 @@ define('skylark-devices-keyboard/codes',[
   // Helper aliases
 
 
-
-
   return keyboard.codes = codes;
 });
 define('skylark-devices-keyboard/names',[

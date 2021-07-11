@@ -81,7 +81,5 @@ define([
   // Helper aliases
 
 
-
-
   return keyboard.codes = codes;
 });
